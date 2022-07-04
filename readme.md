@@ -19,4 +19,4 @@ A place to add your best resources
 # missions
 
 - [ ] transform csv to json format
-- [ ] create the module
+- [ ] create the model
