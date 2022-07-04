@@ -14,7 +14,7 @@ const cs1 = [
                 examen: 18.25,
                 ds: 19,
                 tp: 16,
-                moy: ,
+                moy: 5,
                 credits: 2
             },
             {
