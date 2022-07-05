@@ -8,6 +8,11 @@
 
 const fs = require("fs")
 
+/**
+ * returns an object representation of a json file
+ * @param {String} path - path to json file 
+ * @returns {Object} an object representation of the json file
+ */
 function jsonRead(path) {
     const data = fs.readFileSync(path, { encoding: "utf-8" }, (err, jsonString) => {
         if (err) {
@@ -17,38 +22,52 @@ function jsonRead(path) {
     })
     return JSON.parse(data)
 }
-
-function getStudentMarks() {
-    return jsonRead("./database/L2CS01 sem1.json")
+/**
+ * 
+ * @returns an array of student marks(objects)
+ */
+function getStudentsMarks() {
+    return jsonRead("./database/L2CS01.json")
 }
 
-//getUserMark needs modification
-
-function getStudentMark(studentName, subject = "") {
-    // create the data array from the coressponding json file
-    // search the entry for userName in the array of users
-    // return that entry
-    // if a subject is specified return entry for that subject alone
-    const studentMarks = jsonRead("./database/L2CS01 sem1.json")
-
+/**
+ * gets the specified student's mark for a specified subject  or all marks
+ * @param {string} studentName 
+ * @param {string} subject 
+ * @returns either an object containing all marks or an object containing the mark of the specified subject
+ */
+function getStudentMark(studentName, subject = undefined) {
+    const studentMarks = jsonRead("./database/L2CS01.json")
     studentName = studentName.toLowerCase();
-    if (subject) {
-        for (student of studentMarks) {
-            if (student.Name.toLowerCase() === studentName) {
-                return student[subject] ? { [subject]: student[subject] } : undefined
-            }
-        }
-    } else {
-        for (student of studentMarks) {
-            if (student.Name.toLowerCase() === studentName) {
-                let obj = { ...student }
+
+    for (student of studentMarks) {
+        if (studentName === student.Name.toLowerCase()) {
+            if (subject) {
+                return { [subject]: student[subject] }
+            } else {
+                const obj = { ...student }
                 delete obj.Name
-                return obj;
+                return obj
             }
         }
-        return undefined
     }
 }
 
-console.log(getStudentMark("daly iheb"))
+
+/**
+ * gets the student's score for the given semester , or for the whole year.
+ * @param {string} studentName 
+ * @param {string} semester 
+ * @returns {Number} returns a number representing the student's score
+ */
+function getStudentMoy(studentName, semester = undefined) {
+    const studentScores = jsonRead("./database/moy L2CS01.json")
+    studentName = studentName.toLowerCase()
+    for (student of studentScores) {
+        if (studentName === student.Name.toLowerCase()) {
+            return semester ? student[`moy ${semester}`] : student["moy generale"]
+        }
+    }
+}
+
 
