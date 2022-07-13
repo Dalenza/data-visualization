@@ -1,5 +1,4 @@
 const express = require('express')
-const { some } = require('lodash')
 const router = require("./routes/home")
 
 
