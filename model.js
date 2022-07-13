@@ -7,6 +7,7 @@
 // NB: if semester is not specified return the general moy for all year
 
 const fs = require("fs")
+const { builtinModules } = require("module")
 
 /**
  * returns an object representation of a json file
@@ -70,4 +71,33 @@ function getStudentMoy(studentName, semester = undefined) {
     }
 }
 
+/** 
+ * @returns {Array<Number>} students general scores 
+*/
 
+function getStudentsGeneralMoy(){
+    const students = jsonRead("./database/moy L2CS01.json")
+    const generalScores = []
+    for(student of students){
+        generalScores.push(student["moy generale"])
+    }
+
+    return generalScores
+}
+
+/**
+ * 
+ * @returns {Array<Object>} - array of objects representing the different scores of each students during the whole year.
+ */
+function getStudentsMoy(){
+    const students = jsonRead("./database/moy L2CS01.json")
+    return students;
+}
+
+module.exports = {
+    getStudentMark,
+    getStudentsMarks,
+    getStudentMoy,
+    getStudentsMoy,
+    getStudentsGeneralMoy
+}
