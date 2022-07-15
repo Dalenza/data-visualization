@@ -1,0 +1,323 @@
+[
+
+    {
+        "Name":"BELKHAYATIA YOUSSEF",
+        "moy sem1":8.3,
+        "credit sem1":13,
+        "moy sem2":11.62,
+        "credit sem2":30,
+        "moy generale":9.96,
+        "credit total":43,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"BEN AMMAR BECHIR",
+        "moy sem1":9,
+        "credit sem1":14,
+        "moy sem2":13.75,
+        "credit sem2":30,
+        "moy generale":11.38,
+        "credit total":44,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"BEN MIMOUN ASSIL",
+        "moy sem1":9.35,
+        "credit sem1":19,
+        "moy sem2":13.96,
+        "credit sem2":30,
+        "moy generale":11.66,
+        "credit total":49,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"BEN SALAH MARIEM",
+        "moy sem1":15.32,
+        "credit sem1":30,
+        "moy sem2":15.9,
+        "credit sem2":30,
+        "moy generale":15.61,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"BEN ZID HAFEDH",
+        "moy sem1":13.39,
+        "credit sem1":30,
+        "moy sem2":14.01,
+        "credit sem2":30,
+        "moy generale":13.7,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"BOKRI MELEK",
+        "moy sem1":9.75,
+        "credit sem1":17,
+        "moy sem2":12.46,
+        "credit sem2":27,
+        "moy generale":11.1,
+        "credit total":44,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"BOUGRIBA MAHDI",
+        "moy sem1":12.02,
+        "credit sem1":28,
+        "moy sem2":13.59,
+        "credit sem2":30,
+        "moy generale":12.8,
+        "credit total":58,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"CHAOUACHI MOHAMED MANEF",
+        "moy sem1":4.08,
+        "credit sem1":0,
+        "moy sem2":11.15,
+        "credit sem2":22,
+        "moy generale":7.62,
+        "credit total":22,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"CHENNAOUI SAYDA",
+        "moy sem1":12.37,
+        "credit sem1":26,
+        "moy sem2":14.38,
+        "credit sem2":30,
+        "moy generale":13.38,
+        "credit total":56,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"CHOUKET NOUR EL HOUDA",
+        "moy sem1":7.48,
+        "credit sem1":4,
+        "moy sem2":13.44,
+        "credit sem2":30,
+        "moy generale":10.46,
+        "credit total":34,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"DAKHLAOUI SAMAR",
+        "moy sem1":10.36,
+        "credit sem1":23,
+        "moy sem2":13.29,
+        "credit sem2":30,
+        "moy generale":11.82,
+        "credit total":53,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"DERBAL MAHMOUD",
+        "moy sem1":14.23,
+        "credit sem1":30,
+        "moy sem2":15.11,
+        "credit sem2":30,
+        "moy generale":14.67,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"GRAMI MOHAMED HABIB",
+        "moy sem1":8.07,
+        "credit sem1":12,
+        "moy sem2":9.24,
+        "credit sem2":17,
+        "moy generale":8.66,
+        "credit total":29,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"HADDAD BILEL",
+        "moy sem1":6.23,
+        "credit sem1":11,
+        "moy sem2":0.34,
+        "credit sem2":0,
+        "moy generale":3.28,
+        "credit total":11,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"HAOUARI MAZEN",
+        "moy sem1":14.39,
+        "credit sem1":30,
+        "moy sem2":14.74,
+        "credit sem2":30,
+        "moy generale":14.57,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"HICHRI CHOUROUK",
+        "moy sem1":2.72,
+        "credit sem1":0,
+        "moy sem2":1.34,
+        "credit sem2":2,
+        "moy generale":2.03,
+        "credit total":2,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"KALLALI OUSSAMA",
+        "moy sem1":7.44,
+        "credit sem1":6,
+        "moy sem2":8.55,
+        "credit sem2":11,
+        "moy generale":8,
+        "credit total":17,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"KAROUI LOUA",
+        "moy sem1":3.94,
+        "credit sem1":0,
+        "moy sem2":4.15,
+        "credit sem2":9,
+        "moy generale":4.04,
+        "credit total":9,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"KHAMLIA AZER",
+        "moy sem1":1.89,
+        "credit sem1":0,
+        "moy sem2":1.29,
+        "credit sem2":2,
+        "moy generale":1.59,
+        "credit total":2,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"LABIDI MAROUA",
+        "moy sem1":12.04,
+        "credit sem1":30,
+        "moy sem2":13.64,
+        "credit sem2":30,
+        "moy generale":12.84,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"LASSOUED SINDA",
+        "moy sem1":9.77,
+        "credit sem1":19,
+        "moy sem2":11.48,
+        "credit sem2":25,
+        "moy generale":10.62,
+        "credit total":44,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"MASSOUDI CHAKIB",
+        "moy sem1":5.66,
+        "credit sem1":3,
+        "moy sem2":12.78,
+        "credit sem2":30,
+        "moy generale":9.22,
+        "credit total":33,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"MHIRI NOUR",
+        "moy sem1":16.16,
+        "credit sem1":30,
+        "moy sem2":14.53,
+        "credit sem2":30,
+        "moy generale":15.34,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"MORGHAM NADA",
+        "moy sem1":15.11,
+        "credit sem1":30,
+        "moy sem2":15.02,
+        "credit sem2":30,
+        "moy generale":15.06,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"NASRI ASMA",
+        "moy sem1":8.52,
+        "credit sem1":12,
+        "moy sem2":11.28,
+        "credit sem2":30,
+        "moy generale":9.9,
+        "credit total":42,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"OUSJI HOUSSEM",
+        "moy sem1":5.06,
+        "credit sem1":3,
+        "moy sem2":13.3,
+        "credit sem2":28,
+        "moy generale":9.18,
+        "credit total":31,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"REZGUI ILYES",
+        "moy sem1":13.34,
+        "credit sem1":30,
+        "moy sem2":15.05,
+        "credit sem2":30,
+        "moy generale":14.2,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"SAHNOUNI RAHMA",
+        "moy sem1":12.76,
+        "credit sem1":30,
+        "moy sem2":14.11,
+        "credit sem2":30,
+        "moy generale":13.43,
+        "credit total":60,
+        "résultat":"Admis"
+    },
+    {
+        "Name":"TAKROUNI IHEB",
+        "moy sem1":6.06,
+        "credit sem1":9,
+        "moy sem2":5.11,
+        "credit sem2":11,
+        "moy generale":5.58,
+        "credit total":20,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"TALMOUDI ANES",
+        "moy sem1":7.43,
+        "credit sem1":16,
+        "moy sem2":6.62,
+        "credit sem2":13,
+        "moy generale":7.02,
+        "credit total":29,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"TMIMI GHASSEN",
+        "moy sem1":5.26,
+        "credit sem1":4,
+        "moy sem2":10.5,
+        "credit sem2":22,
+        "moy generale":7.88,
+        "credit total":26,
+        "résultat":"Contrôle"
+    },
+    {
+        "Name":"TOUATI SARRA",
+        "moy sem1":12.74,
+        "credit sem1":30,
+        "moy sem2":13.85,
+        "credit sem2":30,
+        "moy generale":13.3,
+        "credit total":60,
+        "résultat":"Admis"
+    }
+]
