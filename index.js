@@ -1,11 +1,12 @@
 const express = require('express')
-const router = require("./routes/home")
-
+const homeRouter = require("./routers/home")
+// const userRouter = require("./routes/user")
 
 const app = express()
 
 // initialize routes
-app.use(router)
+app.use(homeRouter)
+// app.use("/users",userRouter)
 // listen for requests 
 app.listen(3000,()=>{
     console.log('listening on port 3000')
