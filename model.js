@@ -23,21 +23,22 @@ function jsonRead(path) {
     return JSON.parse(data)
 }
 /**
- * 
+ * @param {string} group
  * @returns an array of student marks(objects)
  */
-function getStudentsMarks() {
-    return jsonRead("./database/L2CS01.json")
+function getStudentsMarks(group) {
+    return jsonRead(`./database/${group}.json`)
 }
 
 /**
  * gets the specified student's mark for a specified subject  or all marks
  * @param {string} studentName 
  * @param {string} subject 
+ * @param {string} group
  * @returns either an object containing all marks or an object containing the mark of the specified subject
  */
-function getStudentMark(studentName, subject = undefined) {
-    const studentMarks = jsonRead("./database/L2CS01.json")
+function getStudentMark(studentName, subject = undefined, group) {
+    const studentMarks = jsonRead(`./database/${group}.json`);
     studentName = studentName.toLowerCase();
 
     for (student of studentMarks) {
@@ -58,10 +59,11 @@ function getStudentMark(studentName, subject = undefined) {
  * gets the student's score for the given semester , or for the whole year.
  * @param {string} studentName 
  * @param {string} semester 
+ * @param {string} group e.g (L2CS01)
  * @returns {Number} returns a number representing the student's score
  */
-function getStudentMoy(studentName, semester = undefined) {
-    const studentScores = jsonRead("./database/moy L2CS01.json")
+function getStudentMoy(studentName, group, semester = undefined) {
+    const studentScores = jsonRead(`./database/moy ${group.toUpperCase()}.json`)
     studentName = studentName.toLowerCase()
     for (student of studentScores) {
         if (studentName === student.Name.toLowerCase()) {
@@ -70,4 +72,9 @@ function getStudentMoy(studentName, semester = undefined) {
     }
 }
 
-
+module.exports = {
+    getStudentMark,
+    getStudentsMarks,
+    getStudentMoy,
+    jsonRead,
+}
