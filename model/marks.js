@@ -12,7 +12,7 @@ function getStudentsMarks(group = undefined) {
     }
     return studentsMarks;
   } else {
-    return model.jsonRead(`./database/L2CS0${group}.json`);
+    return model.jsonRead(`./database/${group}.json`);
   }
 }
 
@@ -20,10 +20,11 @@ function getStudentsMarks(group = undefined) {
  * gets the specified student's mark for a specified subject  or all marks
  * @param {string} studentName
  * @param {string} subject
+ * @param {string} group
  * @returns either an object containing all marks or an object containing the mark of the specified subject
  */
-function getStudentMark(studentName, subject = undefined) {
-  const studentMarks = getStudentsMarks();
+function getStudentMark(studentName, subject = undefined, group) {
+  const studentMarks = model.jsonRead(`./database/${group}.json`);
   studentName = studentName.toLowerCase();
 
   for (student of studentMarks) {

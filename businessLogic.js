@@ -122,7 +122,21 @@ function getStudentRankSubjectsSection(studentName) {
   return ans;
 }
 
+function getLeaderBoard() {
+  const scoresList = scores.getStudentsMoy();
+  scoresList.sort((a, b) => {
+    return b["moy generale"] - a["moy generale"];
+  });
+  let i = 1;
+  for (score of scoresList) {
+    score.rank = i;
+    i++;
+  }
+  return scoresList;
+}
+
 module.exports = {
+  getLeaderBoard,
   getStudentRankClass,
   getStudentRankSection,
   getStudentRankSubjectsClass,

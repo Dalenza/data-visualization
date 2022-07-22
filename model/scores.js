@@ -20,7 +20,7 @@ function getStudentMoy(studentName, semester = undefined, group) {
 
 /**
  *
- * @param {number} - group : defines which class data should be retrieved , if not specified all classes data will be returned
+ * @param {number} group defines which class data should be retrieved , if not specified all classes data will be returned
  * @returns an array of scores for each student per section or per class.
  */
 function getStudentsMoy(group = undefined) {
@@ -31,7 +31,7 @@ function getStudentsMoy(group = undefined) {
     }
     return studentScores;
   } else {
-    return model.jsonRead(`./database/moy L2CS0${group}.json`);
+    return model.jsonRead(`./database/moy ${group}.json`);
   }
 }
 
