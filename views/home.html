@@ -1,13 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="home.css">
     <title>Data Visualization</title>
 </head>
+
 <body>
-    <h1>Welcome to this cool website</h1>
+    <header class="header">
+        <div class="logo">
+            <img class="logo__img" src="#" alt="#" />
+        </div>
+        <div class="nav-bar">
+            <div class="dark-mode-ico">
+                <img src="#" alt="#" />
+            </div>
+            <nav>
+                <ul class="links">
+                    <li><a class="link" href="#">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="leader-board">
+            <table class="leader-board__table">
+                <thead class="table-header">
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Class</th>
+                </thead>
+                <tbody class="table-body">
+                    <tr>
+                        <td>1</td>
+                        <td>Amine</td>
+                        <td>L2CS01</td>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pie-chart"></div>
+        <div class="search-box">
+            <h3>You wanna find out about a certain student's grades!?</h3>
+            <input class="input-field" type="text" name="student-name" id="student-name"
+                placeholder="type his or her name here" />
+        </div>
+    </div>
+    <footer>
+        <small>Powered by chartjs <img class="chartjs-ico" src="#" alt="#" /></small>
+    </footer>
     <script src="renderer.js"></script>
 </body>
+
 </html>
