@@ -42,6 +42,14 @@ header {
     align-items: center;
 }
 
+.logo {
+    max-width: 35px;
+}
+
+.logo__img {
+    width: 100%;
+}
+
 .nav-bar {
     display: flex;
 }
@@ -86,4 +94,24 @@ footer {
     background-color: var(--primary-clr-light);
     text-align: center;
     padding: 1rem 2rem;
+}
+
+footer>small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+    margin: auto;
+}
+
+small>a {
+    margin-left: 0.25rem;
+    display: flex;
+    align-items: center;
+    color: salmon;
+}
+
+.chartjs-icon {
+    width: 25px;
+    margin-left: .25rem;
 }
