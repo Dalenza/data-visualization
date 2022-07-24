@@ -126,7 +126,7 @@ function getStudentRankSubjectsSection(studentName) {
 function getLeaderBoard() {
   const scoresList = students.getStudentsData();
   scoresList.sort((a, b) => {
-    return b["moy generale"] - a["moy generale"];
+    return b.scores["moy generale"] - a.scores["moy generale"];
   });
   let i = 1;
   for (score of scoresList) {

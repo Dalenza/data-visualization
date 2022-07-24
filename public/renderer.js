@@ -11,7 +11,7 @@ function renderLeaderBoard(data) {
     const rank = document.createElement("td");
     const name = document.createElement("td");
     const group = document.createElement("td");
-    name.innerText = data[i].Name;
+    name.innerText = data[i].name;
     rank.innerText = data[i].rank;
     group.innerText = data[i].group;
     tableRow.append(rank, name, group);
