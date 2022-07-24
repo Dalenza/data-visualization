@@ -6,7 +6,7 @@ const homeRouter = require("./routes/home");
 const userRouter = require("./routes/user");
 
 const app = express();
-const publicPath = path.resolve(__dirname, "views");
+const publicPath = path.resolve(__dirname, "public");
 
 // mounting routes to middleware
 app.use("/home", homeRouter);

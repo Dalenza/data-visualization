@@ -5,8 +5,7 @@
 
 .leader-board__table {
     width: 100%;
-    border: 2px solid var(--ternary-clr);
-    border-collapse: collapse;
+    border-radius: 8px;
 }
 
 .table-header {
@@ -20,5 +19,6 @@
 .leader-board__table td,
 .leader-board__table th {
     border: 2px solid var(--ternary-clr);
+    border-radius: 8px;
     text-align: center;
 }

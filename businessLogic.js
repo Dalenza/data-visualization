@@ -1,6 +1,7 @@
 const scores = require("./model/scores");
 const marks = require("./model/marks");
 const model = require("./model/model");
+const students = require("./model/student");
 
 /**
  * gets the student's rank in his class
@@ -123,9 +124,9 @@ function getStudentRankSubjectsSection(studentName) {
 }
 
 function getLeaderBoard() {
-  const scoresList = scores.getStudentsMoy();
+  const scoresList = students.getStudentsData();
   scoresList.sort((a, b) => {
-    return b["moy generale"] - a["moy generale"];
+    return b.scores["moy generale"] - a.scores["moy generale"];
   });
   let i = 1;
   for (score of scoresList) {
