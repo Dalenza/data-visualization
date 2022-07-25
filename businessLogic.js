@@ -135,7 +135,7 @@ function getLeaderBoard() {
   }
   return scoresList;
 }
-
+console.log(getLeaderBoard())
 module.exports = {
   getLeaderBoard,
   getStudentRankClass,

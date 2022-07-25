@@ -1,47 +1,45 @@
 const express = require("express");
-const scores = require("../model/scores");
-const marks = require("../model/marks");
-const bl = require("../businessLogic");
-
+// const scores = require("../model/scores");
+// const marks = require("../model/marks");
+// const bl = require("../businessLogic");
+const student = require("../model/student");
 const router = express.Router();
 router.use(express.json());
 
 router.get("/leaderboard", (req, res) => {
-  res.send(bl.getLeaderBoard());
+  res.send(student.getLeaderBoard());
 });
 
 router.get("/scores", (req, res) => {
-  res.send(scores.getStudentsMoy());
+  res.send(student.getStudentsScores());
 });
 
-router.get("/StudentsMarks", (req, res) => {
+router.get("/StudentsGrades", (req, res) => {
   const { group } = req.body;
   if (!group) {
     res.status(418).send({ message: "we need a group" });
   }
-  const data = marks.getStudentsMarks(group);
+  const data = student.getStudentsGrades(group);
   res.status(200).send(data);
 });
 
-router.get("/StudentMark", (req, res) => {
+router.get("/StudentGrade", (req, res) => {
   const { name } = req.body;
-  const { group } = req.body;
   const { subject } = req.body;
-  if (!name || !group) {
-    res.status(418).send({ message: "we need a group or name" });
+  if (!name) {
+    res.status(418).send({ message: "we need a name" });
   }
-  const data = marks.getStudentMark(name, subject, group);
+  const data = student.getStudentGrade(name, subject);
   res.status(200).send(data);
 });
 
-router.get("/StudentMoy", (req, res) => {
+router.get("/StudentScore", (req, res) => {
   const { name } = req.body;
-  const { group } = req.body;
   const { semester } = req.body;
-  if (!name || !group) {
-    res.status(418).send({ message: "we need a group or name" });
+  if (!name) {
+    res.status(418).send({ message: "we need a name" });
   }
-  const data = { moy: scores.getStudentMoy(name, semester, group) };
+  const data = student.getStudentScore(name, semester);
   res.status(200).send(data);
 });
 

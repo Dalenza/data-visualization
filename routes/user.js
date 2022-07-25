@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const bl = require("../businessLogic");
+// const bl = require("../businessLogic");
+const student = require("../model/student");
 router.use(express.json());
 // function getStudentRankClass(studentName, group, semester = undefined) {
 router.get("/StudentRankClass", (req, res) => {
@@ -10,9 +11,7 @@ router.get("/StudentRankClass", (req, res) => {
   if (!group || !name) {
     res.status(418).send({ message: "we need a group or a name" });
   }
-  const data = {
-    rank: bl.getStudentRankClass(name, group, semester),
-  };
+  const data = student.getStudentRankClass(name, group, semester);
   res.status(200).send(data);
 });
 
@@ -22,28 +21,25 @@ router.get("/StudentRankSection", (req, res) => {
   if (!name) {
     res.status(418).send({ message: "we need a name" });
   }
-  const data = {
-    rank: bl.getStudentRankSection(name, semester),
-  };
+  const data = student.getStudentRankSection(name, semester);
   res.status(200).send(data);
 });
-//function getStudentRankSubjectsClass(studentName, group) {
-router.get("/StudentRankSubjectsClass", (req, res) => {
+router.get("/StudentRankGradesClass", (req, res) => {
   const { name } = req.body;
   const { group } = req.body;
   if (!name || !group) {
     res.status(418).send({ message: "we need a name or a group" });
   }
-  const data = bl.getStudentRankSubjectsClass(name, group);
+  const data = student.getStudentRankGradesClass(name, group);
   res.status(200).send(data);
 });
 
-router.get("/StudentRankSubjectsSection", (req, res) => {
+router.get("/StudentRankGradesSection", (req, res) => {
   const { name } = req.body;
   if (!name) {
     res.status(418).send({ message: "we need a name " });
   }
-  const data = bl.getStudentRankSubjectsSection(name);
+  const data = student.getStudentRankGradesSection(name);
   res.status(200).send(data);
 });
 module.exports = router;
