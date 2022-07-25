@@ -84,7 +84,129 @@ function getStudentScore(name, semester = undefined) {
   return { [semester]: student.scores[`moy ${semester}`] };
 }
 
-console.log(getStudentScore("daly iheb", "sem2"));
+/**
+ * gets the student's rank in his class
+ * @param {string} studentName
+ * @param {string} group e.g (L2CS01)
+ * @param {string} semester e.g (sem1|sem2)
+ * @returns {Number} returns a number representing the student's rank in his class in the first semester or second semester or in general
+ */
+
+function getStudentRankClass(studentName, group, semester = undefined) {
+  const studentScores = getStudentsScores(group);
+  if (!semester) semester = "generale";
+  studentScores.sort((a, b) => {
+    return b[`moy ${semester}`] - a[`moy ${semester}`];
+  });
+  for (let i = 0; i < studentScores.length; i++) {
+    if (studentScores[i]["name"] === studentName.toUpperCase()) {
+      return {
+        "rank": i + 1
+      };
+    }
+  }
+}
+
+/**
+ * gets the student's rank in his "section"
+ * @param {string} studentName
+ * @param {string} semester e.g (sem1|sem2)
+ * @returns {Number} returns a number representing the student's rank in his "section" in the first semester or second semester or in general
+ */
+function getStudentRankSection(studentName, semester = undefined) {
+  const studentScores = getStudentsScores();
+  if (!semester) semester = "generale";
+  studentScores.sort((a, b) => {
+    return b[`moy ${semester}`] - a[`moy ${semester}`];
+  });
+  for (let i = 0; i < studentScores.length; i++) {
+    if (studentScores[i]["name"] === studentName.toUpperCase()) {
+      return {
+        "rank": i + 1
+      };
+    }
+  }
+}
+
+
+/**
+ * gets the student's rank in all subects;
+ * @param {string} studentName
+ * @param {string} group
+ * @returns {Number} returns the rank of each subject (object)
+ */
+function getStudentRankGradesClass(studentName, group) {
+  const grades = getStudentsGrades(group);
+  let ans = {};
+  Object.keys(grades[0]).forEach((ele) => {
+    ans[ele] = -1;
+  });
+  ans.name = studentName;
+  let arr = Object.keys(ans).splice(1);
+  arr.forEach((ele) => {
+    let moy = [];
+    for (grade of grades) {
+      moy.push([grade[ele] === "disp" ? 0 : grade[ele], grade.name]);
+    }
+    moy.sort((a, b) => {
+      return a[0] >= b[0] ? -1 : 1;
+    });
+    for (let i = 0; i < moy.length; i++) {
+      if (moy[i][1].toLowerCase() === studentName.toLowerCase()) {
+        ans[ele] = i + 1;
+        break;
+      }
+    }
+  });
+  return ans;
+}
+
+
+/**
+ * gets the student's rank in all subjects;
+ * @param {string} studentName
+ * @returns {Number} returns the rank of each subject (object)
+ */
+function getStudentRankGradesSection(studentName) {
+  const grades = getStudentsGrades();
+  let ans = {};
+  Object.keys(grades[0]).forEach((ele) => {
+    ans[ele] = -1;
+  });
+  ans.name = studentName;
+  let arr = Object.keys(ans).splice(1);
+  arr.forEach((ele) => {
+    let moy = [];
+    for (grade of grades) {
+      moy.push([grade[ele] === "disp" ? 0 : grade[ele], grade.name]);
+    }
+    moy.sort((a, b) => {
+      return a[0] >= b[0] ? -1 : 1;
+    });
+    for (let i = 0; i < moy.length; i++) {
+      if (moy[i][1].toLowerCase() === studentName.toLowerCase()) {
+        ans[ele] = i + 1;
+        break;
+      }
+    }
+  });
+  return ans;
+}
+
+function getLeaderBoard() {
+  const scoresList = getStudentsData();
+  scoresList.sort((a, b) => {
+    return b.scores["moy generale"] - a.scores["moy generale"];
+  });
+  let i = 1;
+  for (score of scoresList) {
+    score.rank = i;
+    i++;
+  }
+  return scoresList;
+}
+
+// console.log(getLeaderBoard());
 
 module.exports = {
   getStudentData,
@@ -93,4 +215,9 @@ module.exports = {
   getStudentGrade,
   getStudentsScores,
   getStudentScore,
+  getStudentRankClass,
+  getStudentRankSection,
+  getStudentRankGradesClass,
+  getStudentRankGradesSection,
+  getLeaderBoard,
 };
