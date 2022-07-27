@@ -19,10 +19,32 @@ function renderPieChart(groups) {
   for (label of labels) {
     values.push(groups[label]);
   }
-
+  let nbStudents = 0;
+  for (value of values) {
+    nbStudents += value;
+  }
+  console.log(
+    values.map((ele) => {
+      return ((ele * 100) / nbStudents).toFixed(2);
+    })
+  );
   const data = {
     labels: labels,
     datasets: [
+      {
+        label: "Scores Percentage",
+        backgroundColor: [
+          "rgba(185, 49, 97, 0.801)",
+          "rgba(215, 82, 128, 0.806)",
+          "rgba(238, 209, 128, 0.804)",
+          "rgba(255, 248, 156, 0.801)",
+          "rgba(238, 209, 128, 0.899)",
+        ],
+        borderColor: "transparent",
+        data: values.map((ele) => {
+          return ((ele * 100) / nbStudents).toFixed(2);
+        }),
+      },
       {
         label: "Scores Distribution",
         backgroundColor: [
@@ -39,10 +61,17 @@ function renderPieChart(groups) {
   };
 
   const config = {
-    type: "pie",
+    type: "doughnut",
     data: data,
     options: {
       maintainAspectRatio: false,
+      title: {
+        display: true,
+        text: ["Scores distribution"],
+        fontFamily: "sans-serif",
+        fontSize: 24,
+        fontColor: "rgb(0,120,0)",
+      },
     },
   };
   const myChart = new Chart("pie-chart__canvas", config);
