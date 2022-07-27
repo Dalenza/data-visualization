@@ -84,6 +84,41 @@ function getStudentScore(name, semester = undefined) {
   return { [semester]: student.scores[`moy ${semester}`] };
 }
 
+function getGroupedScores() {
+  const studentScores = getStudentsScores();
+  const generalScores = [];
+  for (student of studentScores) {
+    generalScores.push(student["moy generale"]);
+  }
+  // console.log(generalScores);
+  const scoreGroups = {};
+  for (generalScore of generalScores) {
+    if (generalScore < 10) {
+      scoreGroups["0-10"] = scoreGroups["0-10"] ? scoreGroups["0-10"] + 1 : 1;
+    } else if (generalScore >= 10 && generalScore < 12) {
+      scoreGroups["10-12"] = scoreGroups["10-12"]
+        ? scoreGroups["10-12"] + 1
+        : 1;
+    } else if (generalScore >= 12 && generalScore < 14) {
+      scoreGroups["12-14"] = scoreGroups["12-14"]
+        ? scoreGroups["12-14"] + 1
+        : 1;
+    } else if (generalScore >= 14 && generalScore < 16) {
+      scoreGroups["14-16"] = scoreGroups["14-16"]
+        ? scoreGroups["14-16"] + 1
+        : 1;
+    } else {
+      scoreGroups["16-20"] = scoreGroups["16-20"]
+        ? scoreGroups["16-20"] + 1
+        : 1;
+    }
+    if (generalScore < 10) {
+      scoreGroups["0-10"] = scoreGroups["0-10"] ? scoreGroups["0-10"] + 1 : 1;
+    }
+  }
+  return scoreGroups;
+}
+
 /**
  * gets the student's rank in his class
  * @param {string} studentName
@@ -101,7 +136,7 @@ function getStudentRankClass(studentName, group, semester = undefined) {
   for (let i = 0; i < studentScores.length; i++) {
     if (studentScores[i]["name"] === studentName.toUpperCase()) {
       return {
-        "rank": i + 1
+        rank: i + 1,
       };
     }
   }
@@ -122,12 +157,11 @@ function getStudentRankSection(studentName, semester = undefined) {
   for (let i = 0; i < studentScores.length; i++) {
     if (studentScores[i]["name"] === studentName.toUpperCase()) {
       return {
-        "rank": i + 1
+        rank: i + 1,
       };
     }
   }
 }
-
 
 /**
  * gets the student's rank in all subects;
@@ -160,7 +194,6 @@ function getStudentRankGradesClass(studentName, group) {
   });
   return ans;
 }
-
 
 /**
  * gets the student's rank in all subjects;
@@ -214,6 +247,7 @@ module.exports = {
   getStudentsGrades,
   getStudentGrade,
   getStudentsScores,
+  getGroupedScores,
   getStudentScore,
   getStudentRankClass,
   getStudentRankSection,

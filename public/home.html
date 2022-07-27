@@ -41,7 +41,9 @@
                 </tbody>
             </table>
         </div>
-        <div class="pie-chart"></div>
+        <div class="pie-chart">
+            <canvas id="pie-chart__canvas"></canvas>
+        </div>
         <div class="search-box">
             <h3>You wanna find out about a certain student's grades!?</h3>
             <input class="input-field" type="text" name="student-name" id="student-name"
@@ -52,6 +54,7 @@
         <small>Powered by <a target="_blank" href="https://www.chartjs.org/">chartjs<img class="chartjs-icon"
                     src="./assets/chartjs-logo.svg" alt="#" /></a></small>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="renderer.js"></script>
 </body>
 

@@ -14,6 +14,10 @@ router.get("/scores", (req, res) => {
   res.send(student.getStudentsScores());
 });
 
+router.get("/groupedScores", (req, res) => {
+  res.send(student.getGroupedScores());
+});
+
 router.get("/StudentsGrades", (req, res) => {
   const { group } = req.body;
   if (!group) {

@@ -18,7 +18,15 @@
 
 .leader-board__table td,
 .leader-board__table th {
+    text-transform: lowercase;
     border: 2px solid var(--ternary-clr);
     border-radius: 8px;
     text-align: center;
+}
+
+.pie-chart {
+    width: 40%;
+    height: 30%;
+    margin: auto;
+    margin-bottom: 2rem;
 }

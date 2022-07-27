@@ -70,6 +70,7 @@ header {
     width: 85%;
     max-width: 780px;
     margin: auto;
+    margin-bottom: 2rem;
 }
 
 .search-box {
@@ -87,9 +88,9 @@ header {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    /* position: absolute; */
+    /* bottom: 0;
+    left: 0; */
     width: 100%;
     background-color: var(--primary-clr-light);
     text-align: center;
