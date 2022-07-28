@@ -24,6 +24,12 @@
     text-align: center;
 }
 
+.user-name:hover,
+.user-group:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
 .pie-chart {
     width: 40%;
     height: 30%;

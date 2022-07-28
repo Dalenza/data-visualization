@@ -19,32 +19,12 @@ router.get("/groupedScores", (req, res) => {
 });
 
 router.get("/StudentsGrades", (req, res) => {
-  const { group } = req.body;
-  if (!group) {
-    res.status(418).send({ message: "we need a group" });
-  }
-  const data = student.getStudentsGrades(group);
-  res.status(200).send(data);
+  res.send(student.getStudentsGrades());
 });
 
-router.get("/StudentGrade", (req, res) => {
-  const { name } = req.body;
-  const { subject } = req.body;
-  if (!name) {
-    res.status(418).send({ message: "we need a name" });
-  }
-  const data = student.getStudentGrade(name, subject);
-  res.status(200).send(data);
-});
-
-router.get("/StudentScore", (req, res) => {
-  const { name } = req.body;
-  const { semester } = req.body;
-  if (!name) {
-    res.status(418).send({ message: "we need a name" });
-  }
-  const data = student.getStudentScore(name, semester);
-  res.status(200).send(data);
+router.get("/StudentsGrades/:group", (req, res) => {
+  const group = req.params.group;
+  res.send(student.getStudentsGrades(group));
 });
 
 module.exports = router;

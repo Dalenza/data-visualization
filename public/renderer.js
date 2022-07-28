@@ -6,8 +6,10 @@ function renderLeaderBoard(data) {
     const name = document.createElement("td");
     const group = document.createElement("td");
     name.innerText = data[i].name;
+    name.classList.add("user-name");
     rank.innerText = data[i].rank;
     group.innerText = data[i].group;
+    group.classList.add("user-group");
     tableRow.append(rank, name, group);
     tbody.append(tableRow);
   }
@@ -23,11 +25,6 @@ function renderPieChart(groups) {
   for (value of values) {
     nbStudents += value;
   }
-  console.log(
-    values.map((ele) => {
-      return ((ele * 100) / nbStudents).toFixed(2);
-    })
-  );
   const data = {
     labels: labels,
     datasets: [
@@ -65,12 +62,17 @@ function renderPieChart(groups) {
     data: data,
     options: {
       maintainAspectRatio: false,
-      title: {
-        display: true,
-        text: ["Scores distribution"],
-        fontFamily: "sans-serif",
-        fontSize: 24,
-        fontColor: "rgb(0,120,0)",
+      plugins: {
+        title: {
+          display: true,
+          text: ["Scores distribution", "percentage/number"],
+          fontFamily: "sans-serif",
+          fontSize: 24,
+          fontColor: "rgb(0,120,0)",
+        },
+        legend: {
+          position: "bottom",
+        },
       },
     },
   };
@@ -89,6 +91,19 @@ function showLeaderBoard(url) {
   return fetch(url)
     .then((res) => res.json())
     .then((data) => renderLeaderBoard(data));
+}
+
+function renderUserData(data) {
+  console.log(data);
+}
+
+function showUserData(url, data) {
+  const options = {
+    body: JSON.stringify(data),
+  };
+  return fetch(url, options)
+    .then((res) => res.json())
+    .then((data) => renderUserData(data));
 }
 
 showLeaderBoard("/home/leaderboard");
