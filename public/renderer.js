@@ -97,11 +97,8 @@ function renderUserData(data) {
   console.log(data);
 }
 
-function showUserData(url, data) {
-  const options = {
-    body: JSON.stringify(data),
-  };
-  return fetch(url, options)
+function showUserData(url) {
+  return fetch(url)
     .then((res) => res.json())
     .then((data) => renderUserData(data));
 }
