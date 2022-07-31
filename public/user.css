@@ -1,0 +1,33 @@
+.container {
+    /* background-color: salmon; */
+    min-height: 100vh;
+    max-width: 1280px;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ternary-clr);
+    width: 30%;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 50px;
+    ;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translate(1.5%, 1.5%);
+    box-shadow: 4px 3px 15px 0px rgba(0, 0, 0, 0.488)
+}

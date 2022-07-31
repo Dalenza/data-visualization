@@ -116,3 +116,10 @@ small>a {
     width: 25px;
     margin-left: .25rem;
 }
+
+.pie-chart {
+    width: 40%;
+    height: 30%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
