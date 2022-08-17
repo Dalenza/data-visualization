@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="user.css">
+    <script src="user_renderer.js" defer></script>
     <title>User</title>
 </head>
 
@@ -28,12 +29,20 @@
     </header>
     <div class="container">
         <div class="cards">
-            <div class="card">first</div>
-            <div class="card">second</div>
-            <div class="card">third</div>
+            <div class="card">
+                <div>Rank Per Class: <span id="Rank_C"></span></div>
+            </div>
+            <div class="card">
+                <div>General Score: <span id="G_score"></span></div>
+                <div>Semester1 Score: <span id="S1_score"></span></div>
+                <div>Semester2 Score: <span id="S2_score"></span></div>
+            </div>
+            <div class="card">
+                <div>Rank Per Section: <span id="Rank_S"></span></div>
+            </div>
         </div>
-        <div class="bar-chart">
-            <canvas id="bar-chart__canvas"></canvas>
+        <div class="radar-chart">
+            <canvas id="radar-chart__canvas"></canvas>
         </div>
         <div class="pie-chart">
             <canvas id="pie-chart__canvas"></canvas>
@@ -43,6 +52,7 @@
         <small>Powered by <a target="_blank" href="https://www.chartjs.org/">chartjs<img class="chartjs-icon"
                     src="./assets/chartjs-logo.svg" alt="#" /></a></small>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

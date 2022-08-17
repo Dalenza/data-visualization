@@ -15,14 +15,14 @@
 
 .card {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     background-color: var(--ternary-clr);
     width: 30%;
     min-width: 200px;
     min-height: 200px;
     border-radius: 50px;
-    ;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
@@ -30,4 +30,9 @@
 .card:hover {
     transform: translate(1.5%, 1.5%);
     box-shadow: 4px 3px 15px 0px rgba(0, 0, 0, 0.488)
+}
+
+#radar-chart__canvas{
+    width:500px;
+    height:500px;
 }
